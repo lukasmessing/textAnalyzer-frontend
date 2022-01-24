@@ -1,0 +1,6 @@
+<div>
+    <h3>Result:</h3>
+    <li *ngFor="let letter of textAnalysis.result| keyvalue">
+        The letter '{{letter.key}}' exists {{letter.value}}x.
+    </li>
+</div>
