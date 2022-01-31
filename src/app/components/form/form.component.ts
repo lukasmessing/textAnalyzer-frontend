@@ -16,8 +16,8 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitText(data: { text: string; mode: string; }) {
-    this.resultView.getTextAnalysis(data.text, data.mode);    
+  submitText(data: { mode: string, text: string; analyzeMode: string; }) {
+    this.resultView.getTextAnalysis(data.mode, data.text, data.analyzeMode);    
   }
 
 }

@@ -6,21 +6,28 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
-  @Output() analyzeEvent: EventEmitter<{ text: string, mode: string }> = new EventEmitter();
+  @Output() analyzeEvent: EventEmitter<{ mode: string, text: string, analyzeMode: string }> = new EventEmitter();
   mode!: string;
-
+  analyzeMode!: string;
+  
   constructor() { }
-
+  
   ngOnInit(): void {
   }
 
   onSubmit(inputText: string) {
-    if (inputText != null && this.mode != null) {
-      this.analyzeEvent.emit({ text: inputText, mode: this.mode });
+    if (inputText != null && this.analyzeMode != null) {
+      this.analyzeEvent.emit({ mode: this.mode, text: inputText, analyzeMode: this.analyzeMode });
     }
   }
 
   onModeSelect(mode: string) {
     this.mode = mode;
   }
+
+  onAnalyzeModeSelect(analyzeMode: string) {
+    this.analyzeMode = analyzeMode;
+  }
+
 }
+

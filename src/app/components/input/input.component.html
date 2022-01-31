@@ -1,14 +1,24 @@
 <div class="input">
-    <label class="radioBtn">
-      <input #modeVowels type="radio" name="mode" value="vowels"
-        (click)="onModeSelect(modeVowels.value)" />
-      Vowels
-    </label>
-    <label class="radioBtn">
-      <input #modeConsonants type="radio" name="mode" value="consonants" (click)="onModeSelect(modeConsonants.value)" />
-      Consonants
-    </label>
-    <h3 for="text">Text to analyze:</h3>
-    <input class="inputText" #inputText type="text" (keyup.enter)="onSubmit(inputText.value)" />
-    <button class="btn" (click)="onSubmit(inputText.value)">Analyze</button>
-  </div>
+  <h4>Mode:</h4>
+  <label class="radioBtn">
+    <input #modeOnline type="radio" name="mode" value="online" (click)="onModeSelect(modeOnline.value)" ng- />
+    Online
+  </label>
+  <label class="radioBtn">
+    <input #modeOffline type="radio" name="mode" value="offline" (click)="onModeSelect(modeOffline.value)" />
+    Offline
+  </label>
+  <h4>Analyze:</h4>
+  <label class="radioBtn">
+    <input #modeVowels type="radio" name="analzyeMode" value="vowels" (click)="onAnalyzeModeSelect(modeVowels.value)" />
+    Vowels
+  </label>
+  <label class="radioBtn">
+    <input #modeConsonants type="radio" name="analzyeMode" value="consonants"
+      (click)="onAnalyzeModeSelect(modeConsonants.value)" />
+    Consonants
+  </label>
+  <h3 for="text">Text to analyze:</h3>
+  <input class="inputText" #inputText type="text" (keyup.enter)="onSubmit(inputText.value)" />
+  <button class="btn" (click)="onSubmit(inputText.value)">Analyze</button>
+</div>

@@ -15,9 +15,10 @@ export class ResultViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getTextAnalysis(inputText: string, mode: string) {
-    console.log("getTextAnalysis");
-    this.textAnalysisService.getTextAnalysis(inputText, mode).subscribe((TextAnalysis) => this.textAnalysis = TextAnalysis);
+  getTextAnalysis(mode: string, inputText: string, analyzeMode: string) {
+    this.textAnalysisService
+      .getTextAnalysis(mode, inputText, analyzeMode)
+      .subscribe((TextAnalysis) => this.textAnalysis = TextAnalysis);
   }
 
 }
